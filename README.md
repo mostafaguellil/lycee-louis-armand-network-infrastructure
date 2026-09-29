@@ -129,3 +129,4 @@ The [project guide](docs/project-guide.docx) contains the full protocol referenc
 
 - [GitHub](https://github.com/mostafaguellil)
 - [Portfolio](https://portfolio.n2sid-solutions.com/)
+
