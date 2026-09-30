@@ -1,16 +1,16 @@
-# Cisco Static Routing, DHCP and DNS Lab
+# Multi-Site Network Infrastructure for Lycée Louis Armand Paris
 
-[![Cisco Packet Tracer](https://img.shields.io/badge/Cisco-Packet%20Tracer-1BA0D7?logo=cisco&logoColor=white)](https://www.netacad.com/cisco-packet-tracer)
+[![Project](https://img.shields.io/badge/Project-Network%20Infrastructure-1BA0D7)](#project-overview)
 [![IPv4](https://img.shields.io/badge/IPv4-Static%20Routing-0A66C2)](#routing-design)
 [![DHCP](https://img.shields.io/badge/Services-DHCP%20%7C%20DNS-2EA44F)](#services)
 
-Three-site Cisco Packet Tracer lab demonstrating IPv4 subnetting, router-based DHCP, centralized DNS, primary static routes, and floating static routes for WAN path resilience.
+Multi-site network infrastructure project for Lycée Louis Armand Paris featuring IPv4 subnetting, router-based DHCP, centralized DNS, static routing, and redundant WAN connectivity.
 
 ![Three-site Packet Tracer topology](assets/topology.png)
 
 ## Project overview
 
-The lab models three small office sites connected by a triangle of Cisco 2911 routers. Each site has a local `/24` LAN, a Cisco 2960 access switch, and two DHCP clients. Site 2 hosts a DNS server used by clients at all three locations.
+The project connects three network sites through a resilient triangle of Cisco 2911 routers. Each site has a local `/24` LAN, a Cisco 2960 access switch, and two DHCP clients. Site 2 hosts the centralized DNS server used across the infrastructure.
 
 Each router owns its local DHCP scope and has a direct primary route to the other two LANs. Floating static routes use administrative distance `10` to provide an alternate path after a direct WAN link is shut down.
 
@@ -46,7 +46,7 @@ Each router knows its connected networks and carries static routes for the two r
 
 For example, R1 normally reaches Site 2 through `10.0.12.2`. If the R1–R2 interface is shut down, the floating route through R3 at `10.0.13.2` becomes eligible and R3 forwards the traffic to R2.
 
-> This lab demonstrates interface-failure recovery. In production, static routes alone may not detect every upstream failure while a local Ethernet interface remains up; IP SLA tracking or a dynamic routing protocol would provide stronger failure detection.
+> This project demonstrates interface-failure recovery. In production, static routes alone may not detect every upstream failure while a local Ethernet interface remains up; IP SLA tracking or a dynamic routing protocol would provide stronger failure detection.
 
 ## Services
 
@@ -87,9 +87,9 @@ The server at `192.168.20.10` hosts A records for `dns.practice.lab`, the three 
 └── README.md
 ```
 
-## Run the lab
+## Run the project
 
-1. Install Cisco Packet Tracer.
+1. Install the application required to open Cisco `.pkt` topology files.
 2. Download or clone this repository.
 3. Open [`packet-tracer/static-routing-dhcp-dns-project.pkt`](packet-tracer/static-routing-dhcp-dns-project.pkt).
 4. Allow the links to converge until their indicators are green.
@@ -98,7 +98,7 @@ The server at `192.168.20.10` hosts A records for `dns.practice.lab`, the three 
 
 ## Validation scenarios
 
-The lab is designed to prove three outcomes:
+The project is designed to prove three outcomes:
 
 1. **Address assignment:** every client receives the correct local network, gateway, and DNS settings.
 2. **End-to-end services:** clients reach remote LANs and resolve `practice.lab` names.
@@ -129,4 +129,3 @@ The [project guide](docs/project-guide.docx) contains the full protocol referenc
 
 - [GitHub](https://github.com/mostafaguellil)
 - [Portfolio](https://portfolio.n2sid-solutions.com/)
-

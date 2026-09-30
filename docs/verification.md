@@ -1,6 +1,6 @@
 # Verification runbook
 
-Run these checks after opening the Packet Tracer project and waiting for all intended links to turn green.
+Run these checks after opening the network project and waiting for all intended links to turn green.
 
 ## 1. Interface status
 
@@ -116,4 +116,3 @@ Expected result: the lower-distance primary route through `10.0.12.2` returns.
 5. Inspect the router's static routes.
 6. Test the destination by DNS name.
 7. Inspect the DNS service and A record if IP connectivity works but name resolution fails.
-
